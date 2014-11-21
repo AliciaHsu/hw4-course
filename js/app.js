@@ -62,14 +62,14 @@ window.fbAsyncInit = function() {
 
   pages.forEach(function(item, index){
 //     //從 template 塞資料
-//     var $page = $(tmpl).clone();
+    var $page = $(tmpl).clone();
     FB.api(item.id, function(response){
-//       // 塞 name, about, like 數到 html 裡。
+      // 塞 name, about, like 數到 html 裡。
           $page.find('.title a').text(response.name).attr('href',response.link);
           $page.find('.about').text(response.about);
           $page.find('.likes').text(response.likes);
           FB.api(item.id+'/picture?type=large', function(response){
-            
+
          // 塞資料到 html 中
       $page.find('.thumbnail img').attr('src',response.data.url);
       $page.appendTo(current);
