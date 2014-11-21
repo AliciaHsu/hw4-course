@@ -79,9 +79,9 @@ var loadPagesInfo = function(pages){
 //           // 利用 .current div:nth-child(3n)，讓每三個page 斷行
           $('.current div:nth-child(3n)').after( '<div class="clearfix"></div>');
           current.children('div').unwrap();
-//         }
-//       });
-//     });
-//   });
+        }
+      });
+    });
+  });
 };
 
