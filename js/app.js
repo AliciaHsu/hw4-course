@@ -26,7 +26,7 @@ window.fbAsyncInit = function() {
             FB.api('/me?fields=name,picture.likes.limit(60)’,function(response){
 
               $('.user-name').text(response.name);
-              $('.user-photo').attr('src',response.picture’.data.url);
+              $('.user-photo').attr('src',response.picture.data.url);
               $('#user').removeClass('hide');
               // 把資訊插入到html裡，並顯示出來
 
