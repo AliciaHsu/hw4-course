@@ -55,10 +55,10 @@ window.fbAsyncInit = function() {
 
 
 // // load each pages info and insert to html
-// var loadPagesInfo = function(pages){
+var loadPagesInfo = function(pages){
 
-//   var counter = 0, //計算現在讀完資料沒
-//       current = $('<div class="current"></div>').appendTo($listRoot); //定位當前的資料
+  var counter = 0, //計算現在讀完資料沒
+      current = $('<div class="current"></div>').appendTo($listRoot); //定位當前的資料
 
   pages.forEach(function(item, index){
 //     //從 template 塞資料
@@ -75,9 +75,10 @@ window.fbAsyncInit = function() {
       $page.appendTo(current);
         counter++;
 //         // 塞完資料以後處理一下斷行
-//         if(counter===pages.length){
+        if(counter===pages.length){
 //           // 利用 .current div:nth-child(3n)，讓每三個page 斷行
-//           current.children('div').unwrap();
+          $('.current div:nth-child(3n)').after( '<div class="clearfix"></div>');
+          current.children('div').unwrap();
 //         }
 //       });
 //     });
